@@ -22,8 +22,10 @@ install.packages(c("s2", "sf", "terra", "gstat", "tidyr", "leaflet",
 
 3. Fill in variables.R with your data and tokens 
    Tokens can be created on the API websites (provided below)
+   Weather for Thailand: https://data.tmd.go.th/nwpapi/register
+   Fire hotspots (NASA): https://firms.modaps.eosdis.nasa.gov/api/map_key
 
-3. Install SQL database
+4. Install SQL database
    install sql server: bash > sudo apt install sql-server
    create database: bash > sudo mysql
    define user: mysql > CREATE USER 'username'@'host' IDENTIFIED BY 'password';
@@ -154,7 +156,7 @@ install.packages(c("s2", "sf", "terra", "gstat", "tidyr", "leaflet",
          DB_NAME=sensors
    
 
-4. Run files regularly to update the map via cron jobs
+5. Run files regularly to update the map via cron jobs
    bash > crontab -e
    # Update sensor data every 5 minutes
    */5 * * * * /usr/bin/Rscript /path/to/update_sensor.R 
