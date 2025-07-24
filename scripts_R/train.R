@@ -137,14 +137,13 @@ rfst_train <- function(pm25,
     
     temporal_features <- data.frame(
       datetime = t_posix,
-      hour = hour_val,
-      weekday = dow_val,
+      sin_weekday = sin(2 * pi * dow_val / 6),
+      cos_weekday = cos(2 * pi * dow_val / 6),
       sin_hour = sin(2 * pi * hour_val / 24), # periodicity of 24 hours
       cos_hour = cos(2 * pi * hour_val / 24), # periodicity of 24 hours
       sin_yearday = sin(2 * pi * doy_val / 365), # periodicity of 365 days
       cos_yearday = cos(2 * pi * doy_val / 365) # periodicity of 365 days
     )[rep(1, nrow(coords_pm25)), ]
-
     
     # training set
     x_t <- prepare_x(coords_pm25, 

@@ -322,8 +322,8 @@ Purpose: train a Random Forest algorithm with a set of predictors.
          | Humidity 2          | Sensor        
          | PM 2.5 interpolated | Sensor  (optionnal, can introduce a biais)       
          | Datetime            | Sensor        
-         | Hour                | Sensor        
-         | Weekday             | Sensor        
+         | Sin_weekday         | Sensor        
+         | Cos_weekday         | Sensor        
          | Sin_hour            | Sensor        
          | Cos_hour            | Sensor        
          | Sin_yearday         | Sensor        
@@ -358,8 +358,8 @@ Purpose: predict PM 2.5 at current time on the studied area.
          |Humidity 2                |Sensor
          |PM 2.5 interpolated value |Sensor
          |Datetime                  |Sensor
-         |Hour                      |Sensor
-         |Weekday                   |Sensor
+         |Sin_weekday               |Sensor        
+         |Cos_weekday               |Sensor
          |Sin_hour                  |Sensor
          |Cos_hour                  |Sensor
          |Sin_yearday               |Sensor

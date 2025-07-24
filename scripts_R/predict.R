@@ -68,8 +68,8 @@ rfst_predict <- function(model,
   doy_val <- yday(now)
   temporal_features_rt <- data.frame(
     datetime = now,
-    hour = hour_val,
-    weekday = dow_val,
+    sin_weekday = sin(2 * pi * dow_val / 6),
+    cos_weekday = cos(2 * pi * dow_val / 6),
     sin_hour = sin(2 * pi * hour_val / 24),
     cos_hour = cos(2 * pi * hour_val / 24),
     sin_yearday = sin(2 * pi * doy_val / 365),
